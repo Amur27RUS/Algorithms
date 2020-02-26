@@ -19,35 +19,41 @@ public class BinarySearch {
 
             if (result > 100 || result < 0) {
                 System.out.println("Введите корректное значение!");
-
-            } else {
-                int operations = 1; //Счётчик операций
-                int low = 0; //Нижнее значение
-                int high = 101; //Верхнее значение
-                int mid = ((low + high) / 2); //Среднее значение
-
-                while (result != mid) {
-                    mid = (low + high) / 2;
-
-                    System.out.println(mid);
-                    if (result < mid) {
-
-                        high = mid;
-                        operations++;
-
-                    } else if (result > mid) {
-                        low = mid;
-                        operations++;
-
-                    } else {
-                        break;
-                    }
-                }
-                System.out.println("Загаданное число: " + mid);
-                System.out.println("Кол-во сделанных операций: " + operations);
             }
+            binarySearchTo100(result);
+
         } catch (InputMismatchException e) {
             System.out.println("Введите целое число!");
         }
+
+
+
+    }
+
+    public static void binarySearchTo100(int result){
+        int operations = 1; //Счётчик операций
+        int low = 0; //Нижнее значение
+        int high = 101; //Верхнее значение
+        int mid = ((low + high) / 2); //Среднее значение
+
+        while (result != mid) {
+            mid = (low + high) / 2;
+
+            System.out.println(mid);
+            if (result < mid) {
+
+                high = mid;
+                operations++;
+
+            } else if (result > mid) {
+                low = mid;
+                operations++;
+
+            } else {
+                break;
+            }
+        }
+        System.out.println("Загаданное число: " + mid);
+        System.out.println("Кол-во сделанных операций: " + operations);
     }
 }
