@@ -12,19 +12,23 @@ import java.util.Scanner;
 
 public class BinarySearch {
     public static void main(String args[]) {
+        int result = 0; //Введённое пользователем число
         Scanner scan = new Scanner(System.in);
+
         System.out.println("Введите число, которое хотите, чтобы нашёл алгоритм: (от 0 до 100)");
+
         try {
-            int result = scan.nextInt();
+            result = scan.nextInt();
+
+        } catch (InputMismatchException e) {
+            System.out.println("Введите целое число!");
+        }
 
             if (result > 100 || result < 0) {
                 System.out.println("Введите корректное значение!");
             }
             binarySearchTo100(result);
 
-        } catch (InputMismatchException e) {
-            System.out.println("Введите целое число!");
-        }
 
 
 
